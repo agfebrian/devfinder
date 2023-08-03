@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "SpaceMono";
+  src: url("../fonts/SpaceMono-Bold.ttf") format("opentype"),
+    url("../fonts/SpaceMono-Regular.ttf") format("opentype");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-app-light dark:bg-app-dark
+  }
+}
