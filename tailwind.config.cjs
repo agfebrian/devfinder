@@ -7,6 +7,7 @@ module.exports = {
       colors: {
         "app-primary": "#0079FF",
         "app-primary-hover": "#60ABFF",
+        "app-grey": "#90A4D4",
         "app-grey-1": "#697C9A",
         "app-grey-2": "#4B6A9B",
         "app-grey-3": "#1E2A47",
