@@ -1,6 +1,6 @@
 <template>
   <layouts-card class="flex items-center gap-6 px-[10px] py-[9.5px]">
-    <div class="flex flex-1 pl-[22px]">
+    <div class="flex flex-1 items-center pl-[22px]">
       <svg
         width="25"
         height="24"
@@ -19,9 +19,12 @@
         name="search"
         id="search"
         type="text"
+        ref="inputSearch"
+        :value="modelValue"
         placeholder="Search GitHub username..."
-        class="ml-6 flex-1 bg-transparent text-lg font-light text-app-grey-2 outline-none"
+        class="ml-6 flex-1 bg-transparent text-lg font-light text-app-grey-2 caret-app-primary outline-none focus:text-app-grey-5 focus:dark:text-white"
       />
+      <p class="pl-2 text-[15px] font-bold text-app-red">No Results</p>
     </div>
     <button
       @click="onClick"
@@ -33,5 +36,17 @@
 </template>
 
 <script setup lang="ts">
-const onClick = () => alert("Test");
+interface Props {
+  modelValue: string;
+}
+
+defineProps<Props>();
+const emits = defineEmits<{
+  (e: "handleClick", query: string): void;
+}>();
+
+const inputSearch = ref<HTMLInputElement>();
+const onClick = () => {
+  emits("handleClick", inputSearch.value!.value);
+};
 </script>

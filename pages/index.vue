@@ -1,7 +1,7 @@
 <template>
   <layouts-container class="py-[104px]">
     <app-header class="mb-9" />
-    <app-search-bar />
+    <app-search-bar v-model="query" @handle-click="handleSearch" />
     <layouts-card class="mt-6 flex gap-[37px] px-12 py-11">
       <div class="h-[177px] w-[177px] rounded-full bg-slate-400"></div>
       <div class="flex-1">
@@ -90,4 +90,8 @@
 
 <script setup lang="ts">
 const theme = useTheme();
+const query = ref<string>("");
+const handleSearch = (query: string) => {
+  alert(query);
+};
 </script>
