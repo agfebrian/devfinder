@@ -1,5 +1,5 @@
 <template>
-  <layouts-container class="py-[31px] md:py-[104px]">
+  <layouts-container class="py-[31px] md:py-[140px] lg:py-[144px]">
     <app-header class="mb-9" />
     <app-search-bar
       v-model="query"
