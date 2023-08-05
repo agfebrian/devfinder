@@ -7,37 +7,60 @@
       @handle-click="handleSearch"
     />
     <layouts-card
-      class="mt-6 flex gap-[37px] px-12 py-11 shadow-app shadow-[#4660bb33] dark:shadow-none"
+      class="mt-6 flex flex-col px-12 py-11 shadow-app shadow-[#4660bb33] dark:shadow-none"
       v-if="status == 'success'"
     >
-      <img
-        v-if="user.avatar_url"
-        class="h-[177px] w-[177px] rounded-full"
-        :src="user.avatar_url"
-        :alt="user.name || 'avatar'"
-        width="177"
-        height="177"
-      />
-      <div v-else class="h-[177px] w-[177px] rounded-full bg-app-grey-1"></div>
-      <div class="flex-1">
-        <div class="flex items-center justify-between">
-          <h3 class="text-[27px] font-bold text-app-grey-4 dark:text-white">
-            {{ user.name || "Not Available" }}
-          </h3>
-          <p class="text-[15px] font-normal text-app-grey-1 dark:text-white">
+      <!-- head -->
+      <div class="flex gap-[37px]">
+        <img
+          v-if="user.avatar_url"
+          class="h-[117px] w-[117px] rounded-full"
+          :src="user.avatar_url"
+          :alt="user.name || 'avatar'"
+          width="177"
+          height="177"
+        />
+        <div
+          v-else
+          class="h-[117px] w-[117px] rounded-full bg-app-grey-1"
+        ></div>
+        <div class="flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="text-[27px] font-bold text-app-grey-4 dark:text-white">
+              {{ user.name || "Not Available" }}
+            </h3>
+            <p
+              class="hidden text-[15px] font-normal text-app-grey-1 dark:text-white md:block"
+            >
+              Joined {{ dayjs(user.created_at).format("DD MMM YYYY") }}
+            </p>
+          </div>
+          <p class="mt-[2px] text-base font-normal text-app-primary">
+            @{{ user.login }}
+          </p>
+          <p
+            class="mt-1 block text-[15px] font-normal text-app-grey-1 dark:text-white md:hidden"
+          >
             Joined {{ dayjs(user.created_at).format("DD MMM YYYY") }}
           </p>
+          <p
+            class="mt-[20px] hidden text-[15px] font-normal leading-[25px] text-app-grey-2 dark:text-white/95 md:block"
+          >
+            {{ user.bio || "Not Available" }}
+          </p>
         </div>
-        <p class="mt-[2px] text-base font-normal text-app-primary">
-          @{{ user.login }}
-        </p>
+      </div>
+      <!-- content -->
+      <div
+        class="ml-auto mt-[24px] flex w-[480px] flex-col gap-[32px] md:mt-[21px] md:gap-[37px]"
+      >
         <p
-          class="mt-[20px] text-[15px] font-normal leading-[25px] text-app-grey-1 dark:text-white/95"
+          class="block text-[15px] font-normal leading-[25px] text-app-grey-2 dark:text-white/95 md:hidden"
         >
           {{ user.bio || "Not Available" }}
         </p>
         <div
-          class="mb-[37px] mt-8 grid grid-cols-3 rounded-[10px] bg-app-light px-8 pb-[17px] pt-[15px] dark:bg-app-dark"
+          class="grid grid-cols-3 rounded-[10px] bg-app-light px-8 pb-[17px] pt-[15px] dark:bg-app-dark"
         >
           <div>
             <p class="text-[13px] font-normal text-app-grey-1 dark:text-white">
