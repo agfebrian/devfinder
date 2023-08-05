@@ -11,13 +11,13 @@
     >
       <p
         v-if="showLabel == 'dark'"
-        class="text-[13px] font-bold uppercase text-app-grey-1 group-hover:text-app-grey-5"
+        class="text-[13px] font-bold uppercase tracking-[2.5px] text-app-grey-1 group-hover:text-app-grey-5"
       >
         {{ showLabel }}
       </p>
       <p
         v-else
-        class="text-[13px] font-bold uppercase text-white group-hover:text-app-grey"
+        class="text-[13px] font-bold uppercase tracking-[2.5px] text-white group-hover:text-app-grey"
       >
         {{ showLabel }}
       </p>
