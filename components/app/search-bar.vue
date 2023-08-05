@@ -41,7 +41,7 @@
         :value="modelValue"
         @keyup.enter="onClick"
         placeholder="Search GitHub username..."
-        class="ml-[9px] flex-1 bg-transparent text-[13px] font-normal text-app-grey-2 caret-app-primary outline-none focus:text-app-grey-5 focus:dark:text-white md:ml-6 md:text-lg"
+        class="ml-[9px] flex-1 bg-transparent text-[13px] font-normal text-app-grey-2 caret-app-primary outline-none focus:text-app-grey-5 focus:dark:text-white sm:ml-6 sm:text-lg"
       />
       <p
         v-if="status == 'error'"
@@ -52,7 +52,7 @@
     </div>
     <button
       @click="onClick"
-      class="flex h-[46px] w-[84px] items-center justify-center rounded-[10px] bg-app-primary px-4 text-sm font-bold text-white transition hover:bg-app-primary-hover active:bg-app-primary-hover md:h-[50px] md:w-[106px] md:px-0 md:text-base"
+      class="flex h-[46px] w-[84px] items-center justify-center rounded-[10px] bg-app-primary px-4 text-sm font-bold text-white transition hover:bg-app-primary-hover active:bg-app-primary-hover sm:h-[50px] sm:w-[106px] sm:px-0 sm:text-base"
     >
       Search
     </button>
