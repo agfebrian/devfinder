@@ -14,8 +14,12 @@ module.exports = {
         "app-grey-4": "#2B3442",
         "app-grey-5": "#222731",
         "app-red": "#F74646",
+
         "app-light": "#F6F8FF",
         "app-dark": "#141D2F",
+
+        "app-disabled-light": "rgba(75, 106, 155, 0.5)",
+        "app-disabled-dark": "rgb(255, 255, 255, 0.5)",
       },
       fontFamily: {
         sans: ["SpaceMono", "sans-serif"],

@@ -16,8 +16,11 @@
 <script setup lang="ts">
 interface Props {
   colorMode: "light" | "dark";
+  disabled?: boolean;
 }
 
-const props = defineProps<Props>();
-const showColor = computed(() => useColorIcon(props.colorMode));
+const props = withDefaults(defineProps<Props>(), {
+  disabled: false,
+});
+const showColor = computed(() => useColorIcon(props.colorMode, props.disabled));
 </script>

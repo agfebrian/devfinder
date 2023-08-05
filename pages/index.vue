@@ -73,28 +73,68 @@
         <div class="flex gap-[62px]">
           <div class="flex flex-1 flex-col gap-4">
             <div class="flex items-center gap-4">
-              <app-icon-location :color-mode="theme as any" />
-              <p class="text-sm font-normal text-app-grey-2 dark:text-white">
+              <app-icon-location
+                :color-mode="theme as any"
+                :disabled="user.location ? false : true"
+              />
+              <p
+                :class="[
+                  user.location
+                    ? 'text-app-grey-2 dark:text-white'
+                    : 'text-app-disabled-light dark:text-app-disabled-dark',
+                  'text-sm font-normal',
+                ]"
+              >
                 {{ user.location || "Not Available" }}
               </p>
             </div>
             <div class="flex items-center gap-4">
-              <app-icon-link :color-mode="theme as any" />
-              <p class="text-sm font-normal text-app-grey-2 dark:text-white">
+              <app-icon-link
+                :color-mode="theme as any"
+                :disabled="user.blog ? false : true"
+              />
+              <p
+                :class="[
+                  user.blog
+                    ? 'text-app-grey-2 dark:text-white'
+                    : 'text-app-disabled-light dark:text-app-disabled-dark',
+                  'text-sm font-normal',
+                ]"
+              >
                 {{ user.blog || "Not Available" }}
               </p>
             </div>
           </div>
           <div class="flex flex-1 flex-col gap-4">
             <div class="flex items-center gap-4">
-              <app-icon-twitter :color-mode="theme as any" />
-              <p class="text-sm font-normal text-app-grey-2 dark:text-white">
+              <app-icon-twitter
+                :color-mode="theme as any"
+                :disabled="user.twitter_name ? false : true"
+              />
+              <p
+                :class="[
+                  user.twitter_name
+                    ? 'text-app-grey-2 dark:text-white'
+                    : 'text-app-disabled-light dark:text-app-disabled-dark',
+                  'text-sm font-normal',
+                ]"
+              >
                 {{ user.twitter_name || "Not Available" }}
               </p>
             </div>
             <div class="flex items-center gap-4">
-              <app-icon-building :color-mode="theme as any" />
-              <p class="text-sm font-normal text-app-grey-2 dark:text-white">
+              <app-icon-building
+                :color-mode="theme as any"
+                :disabled="user.company ? false : true"
+              />
+              <p
+                :class="[
+                  user.company
+                    ? 'text-app-grey-2 dark:text-white'
+                    : 'text-disabled-light dark:text-app-disabled-dark',
+                  'text-sm font-normal',
+                ]"
+              >
                 {{ user.company || "Not Available" }}
               </p>
             </div>
