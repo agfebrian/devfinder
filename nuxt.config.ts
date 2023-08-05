@@ -29,6 +29,7 @@ export default defineNuxtConfig({
     "dayjs-nuxt",
   ],
   colorMode: {
+    preference: "dark",
     classSuffix: "",
     storageKey: "color-mode",
   },
