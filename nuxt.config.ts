@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      apiBase: "https://api.github.com",
+    },
+  },
   devtools: { enabled: false },
   app: {
     head: {
@@ -21,6 +26,7 @@ export default defineNuxtConfig({
     "@nuxtjs/tailwindcss",
     "@nuxtjs/color-mode",
     "@nuxtjs/eslint-module",
+    "dayjs-nuxt",
   ],
   colorMode: {
     classSuffix: "",
